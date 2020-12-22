@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="3_NEW\3_NEW.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="3_NEW\README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
