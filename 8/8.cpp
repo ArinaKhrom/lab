@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+setlocale(LC_ALL, "RUS");
 struct student {
 	char surname[20];
 	char name[20];
@@ -12,34 +12,34 @@ struct student {
 };
 student* newStudent() {
 	student* st = new student();
-	cout << "Ââåäèòå äàííûå ñòóäåíòà:\n";
-	cout << "  Ââåäèòå èìÿ: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã Ã­Ã­Ã»Ã¥ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã :\n";
+	cout << "  Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¨Ã¬Ã¿: ";
 	cin >> st->name;
-	cout << "  Ââåäèòå ôàìèëèş: ";
+	cout << "  Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¾: ";
 	cin >> st->surname;
-	cout << "  Ââåäèòå îò÷åñòâî: ";
+	cout << "  Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã®Ã²Ã·Ã¥Ã±Ã²Ã¢Ã®: ";
 	cin >> st->otchestvo;
-	cout << "  Ââåäèòå äàòó ğîæäåíèÿ: ";
+	cout << "  Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã Ã²Ã³ Ã°Ã®Ã¦Ã¤Ã¥Ã­Ã¨Ã¿: ";
 	cin >> st->dateOfBirth;
-	cout << "  Ââåäèòå àäğåñ: ";
+	cout << "  Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã Ã¤Ã°Ã¥Ã±: ";
 	cin >> st->adress;
-	cout << "  Ââåäèòå ğåéòèíã: ";
+	cout << "  Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã¥Ã©Ã²Ã¨Ã­Ã£: ";
 	cin >> st->rank;
 	return st;
 }
 void printStudent(student* st) {
-	cout << st->surname << " " << st->name << " " << st->otchestvo << " Äàòà ğîæäåíèÿ: " << st->dateOfBirth << " Àäğåñ: " << st->adress << " Ğåéòèíã: " << st->rank << "\n";
+	cout << st->surname << " " << st->name << " " << st->otchestvo << " Ã„Ã Ã²Ã  Ã°Ã®Ã¦Ã¤Ã¥Ã­Ã¨Ã¿: " << st->dateOfBirth << " Ã€Ã¤Ã°Ã¥Ã±: " << st->adress << " ÃÃ¥Ã©Ã²Ã¨Ã­Ã£: " << st->rank << "\n";
 }
 void printFile(char* str) {
 	FILE* f;
 	if ((f = fopen(str, "rb")) == NULL) {
-		cout << "Ôàéë íåâîçîìîæíî îòêğûòü íà ÷òåíèå\n";
+		cout << "Ã”Ã Ã©Ã« Ã­Ã¥Ã¢Ã®Ã§Ã®Ã¬Ã®Ã¦Ã­Ã® Ã®Ã²ÃªÃ°Ã»Ã²Ã¼ Ã­Ã  Ã·Ã²Ã¥Ã­Ã¨Ã¥\n";
 		system("pause");
 		return;
 	}
 	int col = 0;
 	fread(&col, sizeof(int), 1, f);
-	cout << "Êîë-âî ñòóäåíòîâ: " << col << "\n";
+	cout << "ÃŠÃ®Ã«-Ã¢Ã® Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã®Ã¢: " << col << "\n";
 	int i = 0;
 	while (!feof(f) && i < col) {
 		student* st = new student();
@@ -110,13 +110,13 @@ void main() {
 	setlocale(0, "russian");
 	FILE* f;
 	if ((f = fopen("students.dat", "wb")) == NULL) {
-		cout << "Ôàéë íåâîçîìîæíî îòêğûòü íà çàïèñü\n";
+		cout << "Ã”Ã Ã©Ã« Ã­Ã¥Ã¢Ã®Ã§Ã®Ã¬Ã®Ã¦Ã­Ã® Ã®Ã²ÃªÃ°Ã»Ã²Ã¼ Ã­Ã  Ã§Ã Ã¯Ã¨Ã±Ã¼\n";
 		system("pause");
 		return;
 	}
 	int col;
-	cout << "Ââîäèòå äàííûå íîâîãî ñòóäåíòà ïî-àíãëèéñêè \n";
-	cout << "Ââåäèòå êîëè÷åñòâî ñòóäåíòîâ: ";
+	cout << "Ã‚Ã¢Ã®Ã¤Ã¨Ã²Ã¥ Ã¤Ã Ã­Ã­Ã»Ã¥ Ã­Ã®Ã¢Ã®Ã£Ã® Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã  Ã¯Ã®-Ã Ã­Ã£Ã«Ã¨Ã©Ã±ÃªÃ¨ \n";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã®Ã¢: ";
 	cin >> col;
 	fwrite(&col, sizeof(int), 1, f);
 	for (int i = 0; i < col; i++) {
@@ -126,7 +126,7 @@ void main() {
 	fclose(f);
 	printFile("students.dat");
 
-	//ÓÄÀËÅÍÈÅ ÑÒÓÄÅÍÒÎÂ Ñ ÎÄÍÎÉ ÄÀÒÎÉ ĞÎÆÄÅÍÈß
+	//Ã“Ã„Ã€Ã‹Ã…ÃÃˆÃ… Ã‘Ã’Ã“Ã„Ã…ÃÃ’ÃÃ‚ Ã‘ ÃÃ„ÃÃÃ‰ Ã„Ã€Ã’ÃÃ‰ ÃÃÃ†Ã„Ã…ÃÃˆÃŸ
 	FILE* fOld = fopen("students.dat", "rb");
 	f = fopen("studentsNew.dat", "wb");
 	deleteStudentOfBirth(fOld, f);
@@ -135,13 +135,13 @@ void main() {
 	remove("students.dat");
 	rename("studentsNew.dat", "students.dat");
 
-	cout << "ÏÎÑËÅ ÓÄÀËÅÍÈß: ";
+	cout << "ÃÃÃ‘Ã‹Ã… Ã“Ã„Ã€Ã‹Ã…ÃÃˆÃŸ: ";
 	printFile("students.dat");
 
-	//Äîáàâëåíèå ñòóäåíòà ïåğåä ñòóäåíòîì ñ äàííîé ôàìèëèåé
+	//Ã„Ã®Ã¡Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã  Ã¯Ã¥Ã°Ã¥Ã¤ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã®Ã¬ Ã± Ã¤Ã Ã­Ã­Ã®Ã© Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¥Ã©
 	fOld = fopen("students.dat", "rb");
 	f = fopen("studentsNew.dat", "wb");
-	cout << "Ââåäèòå ôàìèëèş ÷åëîâåêà, ïåğåä êîòîğûì âñòàâèòü ñòóäåíòà: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¾ Ã·Ã¥Ã«Ã®Ã¢Ã¥ÃªÃ , Ã¯Ã¥Ã°Ã¥Ã¤ ÃªÃ®Ã²Ã®Ã°Ã»Ã¬ Ã¢Ã±Ã²Ã Ã¢Ã¨Ã²Ã¼ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã : ";
 	char family[20];
 	cin >> family;
 	if (addStudentFamily(fOld, f, family)) {
@@ -151,12 +151,12 @@ void main() {
 		remove("students.dat");
 		rename("studentsNew.dat", "students.dat");
 	} else {
-		cout << "Ñòóäåíò ñ ôàìèëèåé " << family << " íå íàéäåí!" << "\n";
+		cout << "Ã‘Ã²Ã³Ã¤Ã¥Ã­Ã² Ã± Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¥Ã© " << family << " Ã­Ã¥ Ã­Ã Ã©Ã¤Ã¥Ã­!" << "\n";
 		fclose(fOld);
 		fclose(f);
 		remove("studentsNew.dat");
 	}
-	cout << "ÏÎÑËÅ ÄÎÁÀÂËÅÍÈß: ";
+	cout << "ÃÃÃ‘Ã‹Ã… Ã„ÃÃÃ€Ã‚Ã‹Ã…ÃÃˆÃŸ: ";
 	printFile("students.dat");
 
 	system("pause");
